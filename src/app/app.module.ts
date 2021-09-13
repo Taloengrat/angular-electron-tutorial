@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,6 +20,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     BrowserAnimationsModule,
     MatIconModule,
     MatSidenavModule,
+    FormsModule,
+    ReactiveFormsModule,
+    // ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
