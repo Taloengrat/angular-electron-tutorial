@@ -42,33 +42,45 @@
       </div>
 
       <div class="d-grid gap-1" style="margin-left: 20px; margin-top: 20px ;">
-        <button class="btn row"
-          style="color: black; font-weight: bold; text-align: start; width: 100%; align-content: center;">
+        <button routerLink="/general-component" routerLinkActive="active"
+          [ngClass]="this.currentRoute === '/general-component' ? 'btn row btn-primary':'btn row'"
+          style="font-weight: bold; text-align: start; width: 100%;align-content: center; ">
           <div style="width: auto">
             <mat-icon style="padding: 0px; margin: 0px; text-align: start;">flight</mat-icon>
           </div>
           GENERAL
         </button>
-        <button class="btn row"
-          style="color: black; font-weight: bold; text-align: start; width: 100%;  align-content: center; ">
+        <button routerLink="/communications-component" routerLinkActive="active"
+          [ngClass]="this.currentRoute === '/communications-component' ? 'btn row btn-primary':'btn row'"
+          style="font-weight: bold; text-align: start; width: 100%;align-content: center; ">
           <div style="width: auto">
             <mat-icon style="padding: 0px; margin: 0px; text-align: start; text-align: start;">sensors</mat-icon>
           </div>
           COMMUNICATIONS
         </button>
-        <button class="btn row"
-          style="color: black; font-weight: bold; text-align: start; width: 100%;  align-content: center; ">
+        <button routerLink="/configuration-component" routerLinkActive="active"
+          [ngClass]="this.currentRoute === '/configuration-component' ? 'btn row btn-primary':'btn row'"
+          style="font-weight: bold; text-align: start; width: 100%;align-content: center; ">
           <div style="width: auto">
             <mat-icon style="padding: 0px; margin: 0px; text-align: start;">settings</mat-icon>
           </div>
           CONFIGURATION
         </button>
-        <button class="btn row btn-primary"
+        <button routerLink="/datalink-component" routerLinkActive="active"
+          [ngClass]="this.currentRoute === '/datalink-component' ? 'btn row btn-primary':'btn row'"
           style="font-weight: bold; text-align: start; width: 100%;align-content: center; ">
           <div style="width: auto">
             <mat-icon style="padding: 0px; margin: 0px; text-align: start;">article</mat-icon>
           </div>
           DATALINK
+        </button>
+        <button routerLink="/sms-component" routerLinkActive="active"
+          [ngClass]="this.currentRoute === '/sms-component' ? 'btn row btn-primary':'btn row'"
+          style="font-weight: bold; text-align: start; width: 100%;align-content: center; ">
+          <div style="width: auto">
+            <mat-icon style="padding: 0px; margin: 0px; text-align: start;">sms</mat-icon>
+          </div>
+          SMS
         </button>
       </div>
 
@@ -77,229 +89,8 @@
 
     </div>
   </div>
-
-
   <div class="col-9">
 
-    <div class="flex-column nav-pills" style="padding-top: 40px; height: 100vh;" aria-orientation="vertical">
-      <div class="row">
-
-        <div class="container">
-          <div class="row">
-
-            <div class="col-7">
-              <div style=" width: fit-content;">
-                <h1 style="font-weight: bold;">DATA LINK</h1>
-              </div>
-              <div style="margin-top: 30px;"></div>
-
-              <button type="button" class="btn" style="background-color:#DEDEDE; font-weight: normal;">Landing
-                Base</button>
-              <button type="button" class="btn"
-                style="margin-left: 10px; background-color: #DEDEDE; font-weight: normal;">Data
-                Link
-                Setting</button>
-              <button type="button" class="btn btn-primary" style="margin-left: 10px; font-weight: normal;">Pre-Defined
-                Text</button>
-            </div>
-
-            <div class="col-5">
-              <div class=" row">
-                <div class="col">
-                  <button type=" button" class="btn"
-                    style="background-color:#DEDEDE; width: 100%; font-weight: bold;">Import</button>
-                </div>
-                <div class="col">
-                  <button type="button" class="btn"
-                    style="background-color:#DEDEDE;  width: 100%; font-weight: bold;">Export</button>
-                </div>
-                <div class="col">
-                  <button type="button" class="btn"
-                    style="background-color:#DEDEDE;  width: 100%; font-weight: bold;">Print</button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-
-      <div class="row" style="height: max-content;">
-        <div class="container-fluid " style="height: max-content;">
-          <div class="row">
-
-            <div class="col-5">
-              <form [formGroup]="dataLinkForm" (ngSubmit)="onSubmit()" class="d-grid gap-2 needsvalidation" novalidate>
-
-                <h3 style="font-weight: bold; margin-top: 16px; margin-bottom: 16px;">Pre-Defined Text (5/99)</h3>
-
-                <div class="form-group row ">
-                  <label for="index" class="col-4" style="width: fit-content;">Index :</label>
-                  <div class="col spacer"></div>
-                  <div class="col-8">
-                    <input type="number" class="form-control" id="index" formControlName="index" required value=1>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <label for="category" class=" col-4" style="width: fit-content;">Category :</label>
-                  <div class="col spacer"></div>
-                  <div class="col-8">
-                    <input type="number" class="form-control" formControlName="category" required>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <label for="textIdentity" class="col-4" style="width: fit-content;">Text Identity :</label>
-                  <div class="col spacer"></div>
-                  <div class="col-8">
-                    <input type="number" class="form-control" formControlName="textIdentity" required>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <label for="heading" class="col-4" style="width: fit-content;">Heading :</label>
-                  <div class="col spacer"></div>
-                  <div class="col-8">
-                    <input type="number" class="form-control" formControlName="heading" required>
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="body" class=" col-4" style="width: fit-content;">Body :</label>
-                  <div class="col spacer"></div>
-                  <div class="col-8">
-                    <input type="number" class="form-control" formControlName="body">
-                  </div>
-                </div>
-
-                <div class="row">
-
-                  <div class="col">
-                    <button type="button" class="btn" (click)="onDelete()"
-                      style="background-color:#D13C3C; font-weight: bold; color: white; width: 100%;">Delete</button>
-                  </div>
-                  <div class="spacer col">
-                  </div>
-                  <div class="col">
-                    <button type="button" class="btn" (click)="onCancel()"
-                      style="background-color: #DEDEDE; font-weight: bold; width: 100%;">Cancel</button>
-                  </div>
-                  <div class="col">
-                    <button type="submit" class="btn btn-primary"
-                      style=" font-weight: bold; width: 100%;">Update</button>
-                  </div>
-
-
-
-                </div>
-              </form>
-            </div>
-
-            <div class="col-7" style="margin-top: 16px; padding-left: 32px;">
-
-              <h5 style="margin-left: 16px; font-weight: bold;">Pre-Defined Text Lists</h5>
-
-              <div class="row" style="margin-top: 16px; margin-right: 170px;">
-
-                <button type="button" class="col btn btn-light"
-                  style="font-weight: bold; margin-left: 8px;">00-19</button>
-                <button type="button" class="col btn btn-light"
-                  style="font-weight: bold; margin-left: 8px;">20-39</button>
-                <button type="button" class="col btn btn-light"
-                  style="font-weight: bold;  margin-left: 8px;">40-59</button>
-                <button type="button" class="col btn btn-light"
-                  style="font-weight: bold;  margin-left: 8px;">60-79</button>
-                <button type="button" class="col btn btn-light"
-                  style="font-weight: bold; margin-left: 8px;">80-99</button>
-
-              </div>
-
-              <div class="overflow-auto" style="height: 500px;  margin-right: 120px;">
-
-
-                <!-- <li> -->
-                <div *ngFor="let datalink of datalinkList; let i = index"
-                  [ngClass]="{'border border-primary': currentIndex == i}"
-                  style="border-radius: 5px; margin-top: 32px; border-width: 3px !important;" (click)="onSelect(i)">
-
-                  <div class="container">
-
-                    <div class="row">
-                      <h4 class="col-1" style="color:#1E90FF; width: auto;">{{datalink.index}}</h4>
-                      <h5 class="col-1">Index</h5>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-3">
-                        <p class="fs-6" style="text-align: center; ">Category</p>
-                        <h4 style="text-align: center;">
-                          {{datalink.category}}
-                        </h4>
-                      </div>
-                      <div class="col-3">
-                        <p class="fs-6" style="text-align: center;">
-                          Text Identity
-                        </p>
-                        <h4 style="text-align: center;">
-                          {{datalink.textIdentity}}
-                        </h4>
-                      </div>
-                      <div class="col-3">
-                        <p class="fs-6" style="text-align: center;">
-                          Heading
-                        </p>
-                        <h4 style="text-align: center;">
-                          {{datalink.heading}}
-                        </h4>
-
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <p class="fs-6" style="text-align: start; ">Runway Code</p>
-                      <h4 style="text-align: start;">
-                        Your Target is on the right. Take another look and reply I....
-                      </h4>
-                    </div>
-                  </div>
-
-                </div>
-
-                <!-- </li> -->
-
-
-
-
-
-
-              </div>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="spacer col"></div>
-
-      <div class="row" style="margin-bottom: 64px;">
-        <div class="col">
-          <button type="button" class="btn"
-            style="background-color: #DEDEDE; font-weight: bold; width: 100%;">Reset</button>
-        </div>
-
-        <div class="col">
-          <button type="button" class="btn"
-            style=" font-weight: bold; width: 100%; background-color: #1C8246; color: white;">Save</button>
-        </div>
-
-        <div class="col-9"></div>
-      </div>
-    </div>
-
+    <router-outlet></router-outlet>
   </div>
 </div>
-
-
-<router-outlet></router-outlet>
