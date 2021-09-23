@@ -1,0 +1,56 @@
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>
+
+<div style="height: 100vh;">
+    <div class="card shadow-sm rounded" style="text-align: center; margin-top: 200px;">
+        <div style="text-align: center;">
+            #00 Waypoint
+        </div>
+        <form [formGroup]="exForm" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label>Latitude</label>
+                    <input
+                        [ngClass]="((!this.isValidLatitude && this.exForm.get('latitude')?.touched) || (this.isSubmit && this.exForm.controls.latitude.errors)) ? 'is-invalid': ''"
+                        formControlName="latitude" type="text" class="form-control form-control-sm" maxlength="7"
+                        (blur)="onBlurValidationLatitude()" [ngModel]="latitudeValue"
+                        (ngModelChange)="latitudeValue = $event.toUpperCase()">
+                    <!-- <div class="valid-tooltip">
+                        Looks good!
+                    </div> -->
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>Longtitude</label>
+                    <input
+                        [ngClass]="((!this.isValidLongtitude && this.exForm.get('longtitude')?.touched) || (this.isSubmit && this.exForm.controls.longtitude.errors)) ?  'is-invalid': ''"
+                        formControlName="longtitude" type="text" class="form-control form-control-sm" maxlength="8"
+                        (blur)="onBlurValidationLongtitude()" [ngModel]="longtitudeValue"
+                        (ngModelChange)="longtitudeValue = $event.toUpperCase()">
+                    <!-- <div class="valid-tooltip">
+                        Looks good!
+                    </div> -->
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label>Elevation</label>
+                    <input
+                        [ngClass]="(this.exForm.get('elevation')?.errors && this.exForm.get('elevation')?.touched || (this.isSubmit && this.exForm.controls.elevation.errors)) ? 'is-invalid': ''"
+                        formControlName="elevation" type="number" class="form-control form-control-sm"
+                        style="-moz-appearance: none;">
+                    <!-- <div class="valid-tooltip">
+                        Looks good!
+                    </div> -->
+                </div>
+            </div>
+        </form>
+        <div>
+            <button type="submit" class="btn btn-primary" (click)="onSubmit()">
+                Submit
+            </button>
+        </div>
+    </div>
+</div>

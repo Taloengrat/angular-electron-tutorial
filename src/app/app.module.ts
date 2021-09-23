@@ -14,6 +14,7 @@ import { ConfigurationComponent } from './configuration/configuration.component'
 import { CommunicationsComponent } from './communications/communications.component';
 import { GeneralComponent } from './general/general.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { WaypointComponent } from './waypoint/waypoint.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ConfigurationComponent,
     CommunicationsComponent,
     GeneralComponent,
+    WaypointComponent,
   ],
   imports: [
     BrowserModule,

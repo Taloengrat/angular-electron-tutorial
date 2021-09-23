@@ -6,6 +6,7 @@ import { DatalinkComponentComponent } from './datalink-component/datalink-compon
 import { GeneralComponent } from './general/general.component';
 import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
 import { SmsComponent } from './sms/sms.component';
+import { WaypointComponent } from './waypoint/waypoint.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'datalink-component' },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'configuration-component', component: ConfigurationComponent },
   { path: 'communications-component', component: CommunicationsComponent },
   { path: 'general-component', component: GeneralComponent },
+  { path: 'waypoint-component', component: WaypointComponent },
   { path: '**', component: PageNotfoundComponent },
 
 ];

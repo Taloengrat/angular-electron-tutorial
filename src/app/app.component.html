@@ -82,6 +82,14 @@
           </div>
           SMS
         </button>
+        <button routerLink="/waypoint-component" routerLinkActive="active"
+          [ngClass]="this.currentRoute === '/waypoint-component' ? 'btn row btn-primary':'btn row'"
+          style="font-weight: bold; text-align: start; width: 100%;align-content: center; ">
+          <div style="width: auto">
+            <mat-icon style="padding: 0px; margin: 0px; text-align: start;">location_on</mat-icon>
+          </div>
+          Way point
+        </button>
       </div>
 
       <div class="spacer col"></div>
