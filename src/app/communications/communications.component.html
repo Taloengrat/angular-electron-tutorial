@@ -1,1 +1,27 @@
-<p>communications works!</p>
+<div style="height: 100vh;">
+    <div class="card shadow-sm rounded" style="text-align: center; margin-top: 200px;">
+        <div style="text-align: center;">
+            #00 Waypoint
+        </div>
+        <form [formGroup]="communicationsForm" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label>Field </label>
+                    <input
+                        [ngClass]="(this.communicationsForm.controls.field1.errors && this.communicationsForm.get('field1')?.touched)  ? 'is-invalid': ''"
+                        formControlName="field1" type="number" class="form-control form-control-sm" maxlength="8">
+
+                </div>
+                <h1>{{this.inScope}}</h1>
+                <h3>{{this.inScopeAvailable}}</h3>
+                <h2 class="sucsess">{{this.result}}</h2>
+                <h1>Value model {{this.valueModel}}</h1>
+            </div>
+        </form>
+        <div>
+            <button type="submit" class="btn btn-primary" (click)="onSubmit()">
+                Submit
+            </button>
+        </div>
+    </div>
+</div>

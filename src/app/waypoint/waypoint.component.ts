@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-waypoint',
@@ -16,8 +16,8 @@ export class WaypointComponent implements OnInit {
   isFormValid: boolean = false;
   isSubmit: boolean = false;
   latitudeValue: string = "";
-  longtitudeValue: string ="";
-  
+  longtitudeValue: string = "";
+
   constructor() { }
 
   ngOnInit(): void {
